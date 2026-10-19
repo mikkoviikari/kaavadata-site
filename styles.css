@@ -1,0 +1,356 @@
+/* kaavadata.fi. Tokens from the Kaavadata brand v0.2 (kaava-decoder, brand/kaavadata.css): light only, no gradients,
+   thin borders, plenty of whitespace, Source Sans 3 throughout. The plan and its data carry the visual richness. */
+
+:root {
+  /* Brand */
+  --kd-forest: #183f35;
+  --kd-moss:   #8fa37b;
+  --kd-blue:   #5d91ad;
+  --kd-sky:    #a9c7d8;
+  --kd-clay:   #d86f3f;
+  --kd-sand:   #f3eee4;
+
+  /* UI neutrals */
+  --kd-bg:     #f8f8f5;
+  --kd-panel:  #ffffff;
+  --kd-text:   #202b27;
+  --kd-muted:  #68736e;
+  --kd-border: #d8ded9;
+
+  /* Shape */
+  --kd-radius-sm: 6px;
+  --kd-radius:    10px;
+  --kd-radius-lg: 14px;
+
+  /* Typography */
+  --kd-font: "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Page */
+  --page: 1120px;
+  --gutter: 24px;
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--kd-bg);
+  color: var(--kd-text);
+  font-family: var(--kd-font);
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  color: var(--kd-forest);
+  font-weight: 600;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--kd-forest);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  text-decoration-color: var(--kd-blue);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--kd-blue);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: calc(var(--page) + 2 * var(--gutter));
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* Header */
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 76px;
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--kd-forest);
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+}
+
+.wordmark svg {
+  flex: none;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 15px;
+  border: 1px solid var(--kd-border);
+  border-radius: var(--kd-radius);
+  background: var(--kd-panel);
+  color: var(--kd-text);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.button:hover {
+  background: var(--kd-sand);
+}
+
+/* Hero */
+
+.hero {
+  padding-top: 72px;
+  padding-bottom: 56px;
+}
+
+.hero h1 {
+  max-width: 15em;
+  font-size: clamp(36px, 5.2vw, 56px);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.lead {
+  max-width: 40em;
+  margin-top: 28px;
+  font-size: clamp(18px, 2vw, 21px);
+  line-height: 1.5;
+}
+
+.hero .lead + p {
+  max-width: 44em;
+  margin-top: 14px;
+  color: var(--kd-muted);
+}
+
+.motto {
+  margin-top: 32px;
+  color: var(--kd-forest);
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* Three points */
+
+.points {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.points li {
+  padding-top: 18px;
+  border-top: 1px solid var(--kd-border);
+  position: relative;
+}
+
+/* a short rule in the logo's colours above each point */
+.points li::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 32px;
+  height: 3px;
+  background: var(--kd-forest);
+}
+
+.points li:nth-child(2)::before {
+  background: var(--kd-moss);
+}
+
+.points li:nth-child(3)::before {
+  background: var(--kd-sky);
+}
+
+.points h2 {
+  font-size: 19px;
+  letter-spacing: -0.015em;
+}
+
+.points p {
+  margin-top: 6px;
+  color: var(--kd-muted);
+  font-size: 16px;
+}
+
+/* Screenshot */
+
+.shot {
+  margin: 72px 0 0;
+}
+
+.shot a {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--kd-border);
+  border-radius: var(--kd-radius-lg);
+  background: var(--kd-panel);
+  box-shadow: 0 1px 2px rgb(24 63 53 / 0.04), 0 24px 48px -28px rgb(24 63 53 / 0.28);
+}
+
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.shot figcaption {
+  max-width: 44em;
+  margin-top: 14px;
+  color: var(--kd-muted);
+  font-size: 15px;
+}
+
+/* Ryhti */
+
+.model {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 16px 48px;
+  margin-top: 96px;
+  padding: 32px 0;
+  border-top: 1px solid var(--kd-border);
+  border-bottom: 1px solid var(--kd-border);
+}
+
+.label {
+  margin-bottom: 8px;
+  color: var(--kd-muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.model h2 {
+  font-size: 24px;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.model p {
+  align-self: end;
+  font-size: 18px;
+}
+
+/* Footer */
+
+.site-footer {
+  padding: 56px 0 64px;
+}
+
+.site-footer .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 32px;
+}
+
+.site-footer p {
+  color: var(--kd-muted);
+}
+
+.site-footer a {
+  font-weight: 600;
+}
+
+/* Phone */
+
+@media (max-width: 760px) {
+  :root {
+    --gutter: 16px;
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  .site-header .wrap {
+    min-height: 64px;
+  }
+
+  .wordmark {
+    font-size: 21px;
+  }
+
+  .wordmark svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .hero {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .lead {
+    margin-top: 20px;
+  }
+
+  .motto {
+    margin-top: 24px;
+  }
+
+  .points {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .shot {
+    margin-top: 48px;
+  }
+
+  .model {
+    grid-template-columns: 1fr;
+    margin-top: 56px;
+    padding: 24px 0;
+  }
+
+  .model h2 {
+    font-size: 21px;
+  }
+
+  .model p {
+    font-size: 16px;
+  }
+
+  .site-footer {
+    padding: 40px 0 48px;
+  }
+}
