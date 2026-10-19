@@ -1,0 +1,29 @@
+<svg
+  width="48"
+  height="48"
+  viewBox="0 0 48 48"
+  xmlns="http://www.w3.org/2000/svg"
+  aria-label="Kaavadata"
+>
+  <path
+    d="M4 5H21L19 20L4 23Z"
+    fill="#183F35"
+  />
+  <path
+    d="M24 5H44V16L23 20Z"
+    fill="#8FA37B"
+  />
+  <path
+    d="M4 26L19 23L22 44H4Z"
+    fill="#A9C7D8"
+  />
+  <path
+    d="M23 23L44 18V37L29 34Z"
+    fill="#D86F3F"
+  />
+  <path
+    d="M29 37L44 40V44H25L23 25Z"
+    fill="#183F35"
+    opacity="0.88"
+  />
+</svg>
