@@ -1,5 +1,6 @@
 /* kaavadata.fi. Tokens from the Kaavadata brand v0.2 (kaava-decoder, brand/kaavadata.css): light only, no gradients,
-   thin borders, plenty of whitespace, Source Sans 3 throughout. The plan and its data carry the visual richness. */
+   thin borders, plenty of whitespace, Source Sans 3 throughout. The plan and its data carry the visual richness.
+   Three type levels: the headline (h1), the secondary style (.secondary), the body (with .muted for captions). */
 
 :root {
   /* Brand */
@@ -45,19 +46,37 @@ body {
   background: var(--kd-bg);
   color: var(--kd-text);
   font-family: var(--kd-font);
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3 {
+h1, h2, p, figure {
   margin: 0;
-  color: var(--kd-forest);
-  font-weight: 600;
 }
 
-p {
-  margin: 0;
+/* 1. the headline */
+h1 {
+  max-width: 15em;
+  color: var(--kd-forest);
+  font-size: clamp(36px, 5.2vw, 56px);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+/* 2. the secondary style: emphasis, the section heading, the wordmark */
+.secondary {
+  color: var(--kd-forest);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+}
+
+/* 3. the body; captions in the muted colour */
+.muted {
+  color: var(--kd-muted);
 }
 
 a {
@@ -74,6 +93,10 @@ a:focus-visible {
   outline: 2px solid var(--kd-blue);
   outline-offset: 2px;
   border-radius: 4px;
+}
+
+.nowrap {
+  white-space: nowrap;
 }
 
 .wrap {
@@ -97,10 +120,6 @@ a:focus-visible {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: var(--kd-forest);
-  font-size: 24px;
-  font-weight: 600;
-  letter-spacing: -0.03em;
   text-decoration: none;
 }
 
@@ -112,13 +131,11 @@ a:focus-visible {
   display: inline-flex;
   align-items: center;
   min-height: 40px;
-  padding: 0 15px;
+  padding: 0 16px;
   border: 1px solid var(--kd-border);
   border-radius: var(--kd-radius);
   background: var(--kd-panel);
   color: var(--kd-text);
-  font-size: 15px;
-  font-weight: 600;
   text-decoration: none;
 }
 
@@ -130,42 +147,26 @@ a:focus-visible {
 
 .hero {
   padding-top: 72px;
-  padding-bottom: 56px;
+  padding-bottom: 40px;
 }
 
-.hero h1 {
-  max-width: 15em;
-  font-size: clamp(36px, 5.2vw, 56px);
-  line-height: 1.08;
-  letter-spacing: -0.03em;
-}
-
-.lead {
+.hero p {
   max-width: 40em;
+}
+
+.hero h1 + p {
   margin-top: 28px;
-  font-size: clamp(18px, 2vw, 21px);
-  line-height: 1.5;
 }
 
-.hero .lead + p {
-  max-width: 44em;
-  margin-top: 14px;
-  color: var(--kd-muted);
+.hero p + p {
+  margin-top: 12px;
 }
 
-.motto {
-  margin-top: 32px;
-  color: var(--kd-forest);
-  font-size: 19px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
+.hero p.secondary {
+  margin-top: 28px;
 }
 
 /* Screenshot */
-
-.shot {
-  margin: 0;
-}
 
 .shot a {
   display: block;
@@ -185,52 +186,24 @@ a:focus-visible {
 .shot figcaption {
   max-width: 44em;
   margin-top: 14px;
-  color: var(--kd-muted);
-  font-size: 15px;
 }
 
 /* Ryhti */
 
-.model {
+.ryhti {
   display: grid;
   grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-  gap: 16px 48px;
-  margin-top: 96px;
+  gap: 12px 48px;
+  margin-top: 88px;
   padding: 32px 0;
   border-top: 1px solid var(--kd-border);
   border-bottom: 1px solid var(--kd-border);
 }
 
-.model h2 {
-  font-size: 24px;
-  line-height: 1.25;
-  letter-spacing: -0.02em;
-}
-
-.model p {
-  font-size: 18px;
-}
-
 /* Footer */
 
 .site-footer {
-  padding: 56px 0 64px;
-}
-
-.site-footer .wrap {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px 32px;
-}
-
-.site-footer p {
-  color: var(--kd-muted);
-}
-
-.site-footer a {
-  font-weight: 600;
+  padding: 32px 0 64px;
 }
 
 /* Phone */
@@ -241,15 +214,15 @@ a:focus-visible {
   }
 
   body {
-    font-size: 16px;
+    font-size: 17px;
+  }
+
+  .secondary {
+    font-size: 20px;
   }
 
   .site-header .wrap {
     min-height: 64px;
-  }
-
-  .wordmark {
-    font-size: 21px;
   }
 
   .wordmark svg {
@@ -259,32 +232,24 @@ a:focus-visible {
 
   .hero {
     padding-top: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 32px;
   }
 
-  .lead {
+  .hero h1 + p {
     margin-top: 20px;
   }
 
-  .motto {
+  .hero p.secondary {
     margin-top: 24px;
   }
 
-  .model {
+  .ryhti {
     grid-template-columns: 1fr;
     margin-top: 56px;
     padding: 24px 0;
   }
 
-  .model h2 {
-    font-size: 21px;
-  }
-
-  .model p {
-    font-size: 16px;
-  }
-
   .site-footer {
-    padding: 40px 0 48px;
+    padding: 24px 0 48px;
   }
 }
